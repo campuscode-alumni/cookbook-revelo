@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>CookbookRevelo</title>
+    <title>Cookbook</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -10,6 +10,9 @@
   </head>
 
   <body>
+    <nav>
+      <%= link_to 'Enviar uma receita', new_recipe_path %>
+    </nav> 
     <%= yield %>
   </body>
 </html>
