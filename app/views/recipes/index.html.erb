@@ -3,3 +3,9 @@
 
 
 <%= render @recipes %>
+
+<%= form_with(url: search_path, method: :get) do %>
+  <%= label_tag(:q, "fdsearch for:") %>
+  <%= text_field_tag(:q) %>
+  <%= submit_tag("Search") %>
+<% end %>

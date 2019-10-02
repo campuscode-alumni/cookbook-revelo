@@ -12,7 +12,15 @@
   <body>
     <nav>
       <%= link_to 'Enviar uma receita', new_recipe_path %>
+      <% unless current_user %>
+        <%= link_to 'Login', new_user_session_path %>
+        <%= link_to 'Cadastrar-se', new_user_registration_path %>
+      <% end %>
     </nav> 
+    <div>
+      <p class=""><%= flash[:notice] %></p>
+      <p class=""><%= alert %></p>
+    </div>
     <%= yield %>
   </body>
 </html>

@@ -3,7 +3,12 @@ require 'rails_helper'
 feature 'Visitor view recipe details' do
   scenario 'successfully' do
     #cria os dados necessários
-    recipe = Recipe.create(title: 'Bolo de cenoura', recipe_type: 'Sobremesa', cuisine: 'Brasileira', difficulty: 'Médio', cook_time: 60, ingredients: 'Farinha, açucar, cenoura', cook_method: 'Cozinhe a cenoura, corte em pedaços pequenos, misture com o restante dos ingredientes')
+    user = User.create!(email: 'test@test.com', password: '123456')
+    recipe = Recipe.create!(title: 'Bolo de cenoura', recipe_type: 'Sobremesa', 
+      cuisine: 'Brasileira', difficulty: 'Médio', cook_time: 60, 
+      ingredients: 'Farinha, açucar, cenoura', 
+      cook_method: 'Cozinhe a cenoura, corte em pedaços pequenos, '\
+      'misture com o restante dos ingredientes', user: user)
 
     # simula a ação do usuário
     visit root_path
