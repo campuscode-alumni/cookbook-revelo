@@ -19,17 +19,3 @@
   <%= f.collection_select(:list_id, @lists, :id, :name) %>
   .....
 <% end %>
-
-<%= link_to 'Aprovar', approve_recipe_path(recipe), method: :post, class: 'btn btn-primary' %>
-
-def approve
-  @recipe = Recipe.find(params[:id])
-  @recipe.approve!
-end
-
-
-User.create(email....password..., role: :admin)
-
-within "#recipe-#{recipe.id}" do
-  seu_codigo....
-end

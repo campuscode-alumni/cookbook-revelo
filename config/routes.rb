@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   resources :recipes, only: [:index, :show, :new, :create, :edit, :update] do
     # post 'add_to_list', on: :member
     resources :recipe_list_items, only: [:create]
+    get 'pending', on: :collection
     member do
       post 'approve'
       post 'reject'
