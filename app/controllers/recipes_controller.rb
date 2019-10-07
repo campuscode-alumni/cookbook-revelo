@@ -11,7 +11,10 @@ class RecipesController < ApplicationController
   def search
   end
 
-  def show; end
+  def show
+    @lists = List.all
+    @recipe_list_item = RecipeListItem.new
+  end
 
   def new
     @recipe = Recipe.new

@@ -20,3 +20,9 @@ describe 'User logged in to create recipe' do
     expect(response).to have_http_status(:found)
   end
 end
+
+list = List.new(....)
+recipe = Recipe.new(....)
+
+expect(page).to have_content('Receita adicionada a lista com sucesso')
+expect(list.recipes).to include(recipe)
