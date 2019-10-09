@@ -15,4 +15,10 @@ Rails.application.routes.draw do
   get 'search', to: 'recipes#search'
 
   get 'my_recipes', to: 'users#my_recipes'
+
+  namespace 'api' do
+    namespace 'v1' do
+      resources :recipes, only: %i[index show]
+    end
+  end
 end
